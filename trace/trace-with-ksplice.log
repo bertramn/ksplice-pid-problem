@@ -1,0 +1,162 @@
+$ strace java -jar ksplice-pid-problem-1.0.0.jar
+execve("/bin/java", ["java", "-jar", "ksplice-pid-problem-1.0.0.jar"], [/* 23 vars */]) = 0
+brk(NULL)                               = 0x19a0000
+getrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+personality(0xffffffff)                 = 0 (PER_LINUX)
+personality(0xffffffff)                 = 0 (PER_LINUX)
+mmap(NULL, 4096, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef56d000
+munmap(0x7efdef56d000, 4096)            = 0
+personality(0xffffffff)                 = 0 (PER_LINUX)
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef56d000
+readlink("/proc/self/exe", "/usr/java/jdk1.8.0_152/jre/bin/j"..., 4096) = 35
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/tls/x86_64", 0x7ffe8981fd90) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/tls", 0x7ffe8981fd90) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/x86_64", 0x7ffe8981fd90) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli", {st_mode=S_IFDIR|0755, st_size=22, ...}) = 0
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/tls/x86_64", 0x7ffe8981fd90) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/tls", 0x7ffe8981fd90) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/x86_64", 0x7ffe8981fd90) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=67846, ...}) = 0
+mmap(NULL, 67846, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7efdef55c000
+close(3)                                = 0
+open("/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320`\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=144056, ...}) = 0
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\250\266\25r\312sO\33p\237P\217b\0372\3"..., 68, 624) = 68
+pread64(3, "\10\0\0\0(\0\0\0\0\0\0\0Ksplice\0glibc-libpth"..., 60, 70588) = 60
+mmap(0x7efeef34f000, 2215936, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efeef34f000
+mprotect(0x7efeef366000, 2093056, PROT_NONE) = 0
+mmap(0x7efeef565000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7efeef565000
+mmap(0x7efeef567000, 13448, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7efeef567000
+close(3)                                = 0
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/libjli.so", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20#\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=103427, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef55b000
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0007\25\vv\205o\354}m\340\26\305\204\6Q\1"..., 36, 400) = 36
+mmap(NULL, 2191360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efdef136000
+mprotect(0x7efdef14c000, 2093056, PROT_NONE) = 0
+mmap(0x7efdef34b000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7efdef34b000
+close(3)                                = 0
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300\20\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=20304, ...}) = 0
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0_\345\354\342\t\24\32\267\"(6\316Al\316o"..., 68, 512) = 68
+pread64(3, "\10\0\0\0$\0\0\0\0\0\0\0Ksplice\0glibc-libdl-"..., 56, 8176) = 56
+mmap(0x7efeef14a000, 2117632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efeef14a000
+mprotect(0x7efeef14d000, 2093056, PROT_NONE) = 0
+mmap(0x7efeef34c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7efeef34c000
+close(3)                                = 0
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \227\3\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=2127016, ...}) = 0
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0{\247\242y\356\23G@\37\253)MJ\354R\370"..., 68, 680) = 68
+pread64(3, "\10\0\0\0$\0\0\0\0\0\0\0Ksplice\0glibc-libc-2"..., 56, 1593036) = 56
+mmap(0x7efeeed84000, 3956736, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efeeed84000
+mprotect(0x7efeeef3e000, 2097152, PROT_NONE) = 0
+mmap(0x7efeef13e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ba000) = 0x7efeef13e000
+mmap(0x7efeef144000, 16904, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7efeef144000
+close(3)                                = 0
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/libksplice_helper.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/libksplice_helper.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib64/libksplice_helper.so", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\22\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=14312, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef55a000
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\26\300\257&\310\31\37\350\202\352\377\2\341Z(u"..., 36, 568) = 36
+pread64(3, "\10\0\0\0\4\0\0\0\2\0\0\0Ksplice\0001\0\0\0", 24, 7492) = 24
+mmap(0x7efeeeb7f000, 2117632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efeeeb7f000
+mprotect(0x7efeeeb82000, 2093056, PROT_NONE) = 0
+mmap(0x7efeeed81000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7efeeed81000
+mmap(0x7efeeed82000, 136, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7efeeed82000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef559000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef557000
+arch_prctl(ARCH_SET_FS, 0x7efdef5577c0) = 0
+mprotect(0x7efeeed81000, 4096, PROT_READ) = 0
+mprotect(0x7efeef13e000, 16384, PROT_READ) = 0
+mprotect(0x7efeef34c000, 4096, PROT_READ) = 0
+mprotect(0x7efeef565000, 4096, PROT_READ) = 0
+mprotect(0x7efdef56e000, 4096, PROT_READ) = 0
+munmap(0x7efdef55c000, 67846)           = 0
+set_tid_address(0x7efdef557a90)         = 2079 <-- thread ID is known
+set_robust_list(0x7efdef557aa0, 24)     = 0
+rt_sigaction(SIGRTMIN, {0x7efeef354bb0, [], SA_RESTORER|SA_SIGINFO, 0x7efeef35e250}, NULL, 8) = 0
+rt_sigaction(SIGRT_1, {0x7efeef354c40, [], SA_RESTORER|SA_RESTART|SA_SIGINFO, 0x7efeef35e250}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+getrlimit(RLIMIT_STACK, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+brk(NULL)                               = 0x19a0000
+brk(0x19c1000)                          = 0x19c1000
+brk(NULL)                               = 0x19c1000
+open("ksplice-pid-problem-1.0.0.jar", O_RDONLY)    = 3
+mmap(NULL, 200704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef526000
+lseek(3, -22, SEEK_END)                 = 2521609
+read(3, "PK\5\6\0\0\0\0\342\5\342\5)\374\1\0\340}$\0\0\0", 22) = 22
+lseek(3, 2391520, SEEK_SET)             = 2391520
+read(3, "PK\1\2\24\0\24\0\10\10\10\0002\6cL\0\0\0\0\2\0\0\0\0\0\0\0\t\0\4\0"..., 1024) = 1024
+lseek(3, 61, SEEK_SET)                  = 61
+read(3, "PK\3\4\24\0\10\10\10\0002\6cL\0\0\0\0\0\0\0\0\0\0\0\0\24\0\0\0", 30) = 30
+munmap(0x7efdef526000, 200704)          = 0
+lseek(3, 111, SEEK_SET)                 = 111
+read(3, "\363M\314\313LK-.\321\rK-*\316\314\317\263R0\3243\340\345r*\315\314)\321u\252\264"..., 122) = 122
+close(3)                                = 0
+readlink("/proc/self/exe", "/usr/java/jdk1.8.0_152/jre/bin/j"..., 4096) = 35
+access("/usr/java/jdk1.8.0_152/jre/lib/amd64/libjava.so", F_OK) = 0
+open("/usr/java/jdk1.8.0_152/jre/lib/amd64/jvm.cfg", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=627, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdef56c000
+read(3, "# Copyright (c) 2003, 2013, Orac"..., 4096) = 627
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+munmap(0x7efdef56c000, 4096)            = 0
+stat("/usr/java/jdk1.8.0_152/jre/lib/amd64/server/libjvm.so", {st_mode=S_IFREG|0755, st_size=17040347, ...}) = 0
+futex(0x7efeef34d0c0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+open("/usr/java/jdk1.8.0_152/jre/lib/amd64/server/libjvm.so", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\6\"\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=17040347, ...}) = 0
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0003\231\264=\301Y\255\316N\237\212n\327\231\371\240"..., 36, 456) = 36
+mmap(NULL, 16764928, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efdee139000
+mprotect(0x7efdeee11000, 2093056, PROT_NONE) = 0
+mmap(0x7efdef010000, 892928, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xcd7000) = 0x7efdef010000
+mmap(0x7efdef0ea000, 305928, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7efdef0ea000
+close(3)                                = 0
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/jli/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/java/jdk1.8.0_152/jre/bin/../lib/amd64/libm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=67846, ...}) = 0
+mmap(NULL, 67846, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7efdef55c000
+close(3)                                = 0
+open("/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360T\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1147736, ...}) = 0
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0|\316\316RM\246\354\331FC\0031R\302\233]"..., 68, 512) = 68
+pread64(3, "\10\0\0\0$\0\0\0\0\0\0\0Ksplice\0glibc-libm-2"..., 56, 1026600) = 56
+mmap(0x7efeee87a000, 3166208, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efeee87a000
+mprotect(0x7efeee97d000, 2093056, PROT_NONE) = 0
+mmap(0x7efeeeb7c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x102000) = 0x7efeeeb7c000
+close(3)                                = 0
+mprotect(0x7efeeeb7c000, 4096, PROT_READ) = 0
+stat("/etc/sysconfig/64bit_strstr_via_64bit_strstr_sse2_unaligned", {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+munmap(0x7efdef55c000, 67846)           = 0
+mmap(NULL, 1052672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7efdef456000
+mprotect(0x7efdef456000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7efdef555f30, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7efdef5569d0, tls=0x7efdef556700, child_tidptr=0x7efdef5569d0) = 2080
+futex(0x7efdef5569d0, FUTEX_WAIT, 2080, NULL0 <---- PID is 0
+) = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
